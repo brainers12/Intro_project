@@ -1,0 +1,20 @@
+<h1><%= @coin.name %> Details</h1>
+
+<p><strong>Symbol:</strong> <%= @coin.symbol %></p>
+<p><strong>Current Price:</strong> <%= @coin.coin_detail&.price %></p>
+<p><strong>Market Cap:</strong> <%= @coin.coin_detail&.market_cap %></p>
+<p><strong>Circulating Supply:</strong> <%= @coin.coin_detail&.circulating_supply %></p>
+<p><strong>Description:</strong> <%= @coin.coin_detail&.description %></p>
+
+<h2>Price History</h2>
+<ul>
+  <% @coin.coin_price_histories.each do |history| %>
+    <li>
+      <%= history.timestamp.strftime('%B %d, %Y %H:%M') %>: $<%= history.price %>
+    </li>
+  <% end %>
+</ul>
+
+
+
+<%= link_to 'Back to Coins List', coins_path %>

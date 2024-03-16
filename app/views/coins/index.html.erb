@@ -1,0 +1,26 @@
+<h1>Coins List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Current Price</th>
+      <th>Market Cap</th>
+      <th></th> <!-- Placeholder for Show link -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @coins.each do |coin| %>
+      <tr>
+        <td><%= coin.name %></td>
+        <td><%= coin.symbol %></td>
+        <td><%= coin.coin_detail&.price %></td>
+        <td><%= coin.coin_detail&.market_cap %></td>
+        <td><%= link_to 'Show', coin_path(coin) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @coins %>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coin: one
+  price: 9.99
+  market_cap: 9.99
+  circulating_supply: 1
+  description: MyText
+
+two:
+  coin: two
+  price: 9.99
+  market_cap: 9.99
+  circulating_supply: 1
+  description: MyText
