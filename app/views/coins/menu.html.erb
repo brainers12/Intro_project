@@ -1,0 +1,35 @@
+<!-- app/views/coins/menu.html.erb -->
+<div class="container my-5">
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8 d-flex justify-content-around">
+        <%= link_to 'Homepage', root_path, class: 'btn btn-outline-primary' %>
+        <%= link_to 'About', about_path, class: 'btn btn-outline-primary' %>
+        <%= link_to 'Coin Prices', menu_path, class: 'btn btn-outline-primary' %>
+        </div>
+    </div>
+  <h1 class="text-center mb-4">Coin Prices</h1>
+  
+  <div class="text-center mb-4">
+    <%= link_to 'Sort by highest price', menu_path(sort: 'highest'), class: 'btn btn-success mx-2' %>
+    <%= link_to 'Sort by lowest price', menu_path(sort: 'lowest'), class: 'btn btn-danger mx-2' %>
+  </div>
+  
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @coins.each do |coin| %>
+        <tr>
+          <td><%= coin.name %></td>
+          <td><%= coin.symbol %></td>
+          <td><%= number_to_currency(coin.coin_detail&.price, precision: 2) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

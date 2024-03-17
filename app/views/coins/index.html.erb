@@ -1,26 +1,49 @@
-<h1>Coins List</h1>
+<div class="container mt-5">
+  <!-- Search Bar -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <%= form_with(url: coins_path, method: "get", local: true, html: { class: "search-bar-form" }) do %>
+        <div class="input-group">
+          <%= search_field_tag :search, params[:search], placeholder: "Search Coins", class: "form-control" %>
+          <div class="input-group-append">
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Symbol</th>
-      <th>Current Price</th>
-      <th>Market Cap</th>
-      <th></th> <!-- Placeholder for Show link -->
-    </tr>
-  </thead>
-  <tbody>
-    <% @coins.each do |coin| %>
+  <!-- Navigation Links -->
+  <div class="text-center mb-4">
+    <%= link_to 'Homepage', root_path, class: 'btn btn-link' %>
+    <%= link_to 'About', about_path, class: 'btn btn-link' %>
+    <%= link_to 'Coin Prices', menu_path, class: 'btn btn-link' %>
+  </div>
+ 
+  <h1 class="text-center mb-4">Coins List</h1>
+
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
       <tr>
-        <td><%= coin.name %></td>
-        <td><%= coin.symbol %></td>
-        <td><%= coin.coin_detail&.price %></td>
-        <td><%= coin.coin_detail&.market_cap %></td>
-        <td><%= link_to 'Show', coin_path(coin) %></td>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Current Price</th>
+        <th>Market Cap</th>
+        <th></th> <!-- Placeholder for Show link -->
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @coins.each do |coin| %>
+        <tr>
+          <td><%= coin.name %></td>
+          <td><%= coin.symbol %></td>
+          <td><%= number_to_currency(coin.coin_detail&.price, precision: 2) %></td>
+          <td><%= number_to_currency(coin.coin_detail&.market_cap, precision: 0) %></td>
+          <td><%= link_to 'Show', coin_path(coin), class: 'btn btn-sm btn-info' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= paginate @coins %>
+  <%= paginate @coins %>
+</div>

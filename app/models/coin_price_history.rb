@@ -6,3 +6,4 @@ class CoinPriceHistory < ApplicationRecord
   validates :timestamp, presence: true
 
 end
+

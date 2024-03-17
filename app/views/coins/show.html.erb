@@ -1,20 +1,20 @@
-<h1><%= @coin.name %> Details</h1>
+<div class="row justify-content-center mb-4">
+    <div class="col-md-8 d-flex justify-content-around">
+    <%= link_to 'Homepage', root_path, class: 'btn btn-outline-primary' %>
+    <%= link_to 'About', about_path, class: 'btn btn-outline-primary' %>
+    <%= link_to 'Coin Prices', menu_path, class: 'btn btn-outline-primary' %>
+    </div>
+</div>
 
-<p><strong>Symbol:</strong> <%= @coin.symbol %></p>
-<p><strong>Current Price:</strong> <%= @coin.coin_detail&.price %></p>
-<p><strong>Market Cap:</strong> <%= @coin.coin_detail&.market_cap %></p>
-<p><strong>Circulating Supply:</strong> <%= @coin.coin_detail&.circulating_supply %></p>
-<p><strong>Description:</strong> <%= @coin.coin_detail&.description %></p>
+<div style="text-align: center; max-width: 600px; margin: auto; padding-top: 50px;">
+  <h1 style="color: #333; margin-bottom: 20px;"><%= @coin.name %> Details</h1>
 
-<h2>Price History</h2>
-<ul>
-  <% @coin.coin_price_histories.each do |history| %>
-    <li>
-      <%= history.timestamp.strftime('%B %d, %Y %H:%M') %>: $<%= history.price %>
-    </li>
-  <% end %>
-</ul>
+  <div style="background: #f7f7f7; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <h2 style="color: #007bff; margin-bottom: 15px;"><%= @coin.symbol %></h2>
+    <p style="margin-bottom: 10px;"><strong>Current Price:</strong> <%= number_to_currency(@coin.coin_detail&.price, unit: 'USD', precision: 2) %></p>
+    <p style="margin-bottom: 10px;"><strong>Market Cap:</strong> <%= number_to_human(@coin.coin_detail&.market_cap, units: { unit: 'USD' }) %></p>
+    <p style="margin-bottom: 10px;"><strong>Description:</strong> <%= @coin.coin_detail&.description %></p>
+  </div>
 
-
-
-<%= link_to 'Back to Coins List', coins_path %>
+  <%= link_to 'Back to Coins List', coins_path, style: "display: inline-block; margin-top: 20px; padding: 10px 15px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none; font-weight: bold;" %>
+</div>

@@ -24,6 +24,9 @@ gem 'pg'
 gem 'chartkick'
 
 gem 'kaminari'
+
+gem 'will_paginate', '~> 3.1'
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
