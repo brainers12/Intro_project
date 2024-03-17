@@ -1,7 +1,5 @@
 class CoinsController < ApplicationController
-  #def index
-    #@coins = Coin.includes(:coin_detail).page(params[:page]).per(10)
-  #end
+  
 
 # app/controllers/coins_controller.rb
 def index
@@ -20,15 +18,12 @@ end
   
 
   def show
-    
     @coin = Coin.find(params[:id])
-    
-    
   end
 
 
   def about
-    # You can set up instance variables here if you need to share data with the view
+    
   end
 
 
