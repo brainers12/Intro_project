@@ -1,214 +1,94 @@
-/* General table styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  th, td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  /* Styling for pagination links */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .pagination li {
-    display: inline;
-    margin: 0 5px;
-  }
-  
-  .pagination a, .pagination a:visited {
-    text-decoration: none;
-    padding: 5px 10px;
-    color: #000;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-  }
-  
-  .pagination a:hover {
-    background-color: #ddd;
-  }
-  
-  .pagination .current {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
+/* General container styling */
+.container {
+  width: 80%;
+  margin: 0 auto; /* centers the container */
+  padding-top: 20px;
+}
 
-/* Custom styles for show page */
-/* styles.css */
-.centered-container {
-    text-align: center;
-    max-width: 600px;
-    margin: auto;
-    padding-top: 50px;
+/* Search bar styling */
+.search-form .input-group {
+  margin-bottom: 20px;
+}
+
+.search-form .form-control {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.search-form .btn {
+  border-radius: 0 0.25rem 0.25rem 0;
+  border-color: #ccc;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Links styling */
+.nav-links .btn-outline-primary {
+  margin-right: 10px;
+  border: 1px solid #007bff;
+  color: #007bff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.nav-links .btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Pagination links styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.pagination a:hover {
+  background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
   }
-  
-  .detail-card {
-    background: #e4dddd;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .nav-links {
+    flex-direction: column;
   }
-  
-  .detail-card h2 {
-    color: #007bff;
-    margin-bottom: 15px;
-  }
-  
-  .detail-card p {
+
+  .nav-links .btn-outline-primary {
     margin-bottom: 10px;
   }
-  
-  .back-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  
-  /* application.css */
-
-.back-to-list-link {
-    display: inline-block;
-    padding: 8px 15px;
-    margin-top: 20px; /* Space from the content above */
-    background-color: #f8f9fa; /* A light grey background */
-    color: black; /* Black text */
-    border-radius: 4px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    border: 1px solid #e3e6ea; /* A subtle border */
-    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
-  }
-  
-  .back-to-list-link:hover {
-    background-color: #e2e6ea; /* Slightly darker on hover */
-    color: black; /* Keep text black on hover */
-    text-decoration: none; /* Ensure no underline on hover */
-  }
-  
-
-  
-
-  /* app/assets/stylesheets/application.css */
-
-/* Styles for the menu container */
-.container {
-    max-width: 800px; /* Set a max-width for the container */
-    margin: auto; /* Center the container */
-  }
-  
-  /* Styles for the table */
-  .table {
-    width: 100%; /* Full width */
-    border-collapse: collapse; /* Collapse borders */
-  }
-  
-  .table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, .05); /* Zebra striping for odd rows */
-  }
-  
-  .th-dark {
-    background-color: #343a40; /* Dark header background */
-    color: white; /* White text for headers */
-  }
-  
-  /* Styles for sorting buttons */
-  .btn {
-    margin: 0 5px; /* Space between buttons */
-    padding: 5px 15px; /* Padding around button text */
-  }
-  
-  .btn-success {
-    background-color: #28a745; /* Green color for 'highest' button */
-    border-color: #28a745; /* Matching border color */
-  }
-  
-  .btn-danger {
-    background-color: #dc3545; /* Red color for 'lowest' button */
-    border-color: #dc3545; /* Matching border color */
-  }
-  
-  .btn-success:hover,
-  .btn-danger:hover {
-    opacity: 0.9; /* Slight opacity change on hover */
-  }
-  
-  /* Responsive styling */
-  @media (max-width: 768px) {
-    .container {
-      padding: 0 15px; /* Padding on smaller screens */
-    }
-  }
-  
-  /* Add any additional styles or overrides as needed */
-  
-
-/* Custom Styles for Search Bar and Navigation Links */
-
-/* Search bar container */
-.search-container {
-    margin-bottom: 2rem;
-  }
-  
-  /* Input group styling for search */
-  .input-group .form-control {
-    border-radius: 0.25rem 0 0 0.25rem;
-  }
-  
-  .input-group .btn {
-    border-radius: 0 0.25rem 0.25rem 0;
-  }
-  
-  /* Navigation link styling */
-  .nav-link-container {
-    margin-bottom: 1rem;
-  }
-  
-  .nav-link-container .btn {
-    margin: 0 10px;
-    transition: color 0.2s, background-color 0.2s;
-  }
-  
-  .nav-link-container .btn:hover {
-    color: #fff;
-    background-color: #007bff;
-  }
-  
-  /* Make the search bar and button feel more cohesive */
-  .input-group .form-control, .input-group .btn {
-    height: 38px; /* Match the height for alignment */
-  }
-  
-  /* Ensure consistent height for input and button */
-  .input-group .form-control, .input-group .btn {
-    border: 2px solid #ced4da;
-  }
-  
-  /* Custom responsive adjustments */
-  @media (max-width: 768px) {
-    .nav-link-container .btn {
-      margin-bottom: 0.5rem; /* Space between buttons when stacked */
-    }
-  }
-  
+}

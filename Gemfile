@@ -27,6 +27,11 @@ gem 'kaminari'
 
 gem 'will_paginate', '~> 3.1'
 
+gem 'bootstrap', '~> 5.1.3'
+
+gem 'jquery-rails'
+
+gem 'webpacker'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
