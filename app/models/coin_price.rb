@@ -7,3 +7,4 @@ class CoinPrice < ApplicationRecord
   validates :timestamp, presence: true
 
 end
+#COin price
