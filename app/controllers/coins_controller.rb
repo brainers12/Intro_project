@@ -20,11 +20,9 @@ end
   
 
   def show
-    #@coin = Coin.includes(:coin_price_histories).find(params[:id])
+    
     @coin = Coin.find(params[:id])
-    # This line ensures you have price histories available in your view
-    #@coin_price_histories = @coin.coin_price_histories
-    #@price_histories = @coin.coin_price_histories.order(timestamp: :desc)
+    
     
   end
 
@@ -43,5 +41,5 @@ end
       @coins = Coin.joins(:coin_detail)
     end
   end
-  
+
 end
