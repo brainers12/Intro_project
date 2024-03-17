@@ -6,3 +6,5 @@ class Coin < ApplicationRecord
 
 
 end
+
+#Coin Model 
