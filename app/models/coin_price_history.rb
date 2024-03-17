@@ -7,3 +7,4 @@ class CoinPriceHistory < ApplicationRecord
 
 end
 
+#COin price history removed
